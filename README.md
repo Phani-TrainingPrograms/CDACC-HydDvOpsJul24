@@ -85,5 +85,29 @@ docker container ls
 docker exec -it mongo mongosh
 show dbs
 ```
+### Assignment:
+```
+Create a Simple Java Application that uses Mongodb database taken from docker to display all the employee records from the database on Console. 
+```
+### Steps for installing a Java App as a container inside a Docker
+1. Create a folder called javaApp
+2. Develop the requried code for the javaApp. create a Sample class and do a hello world program. 
+3. Build the App and test it. 
+4. U must create the Dockerfile, a text file with no extensions. Provide the appropriate instructions
+```
+FROM openjdk:11
+WORKDIR /var/www/java
+COPY . /var/www/java/
+RUN javac SampleFile.java
+CMD exec java SampleFile 
+```
+5. Run the Docker commands to create the image and execute the Container. 
+```
+docker build -t java-app . 
+docker run java-app
+```
+6. Options:
+    - -t => to run the app in a virtual terminal so that U can see the results. 
+    - -i => Use this option if U want the app run in interactive mode, when U expect User inputs from the Console Window. 
 
 
