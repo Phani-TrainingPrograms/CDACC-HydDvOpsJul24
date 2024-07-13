@@ -70,7 +70,20 @@
 ```
 wsl --install
 ``` 
-- U must restart the machine, then U can download the MSI file of the Docker from the Docker Website.
+- U must restart the machine, then U can download the MSI file of the Docker from 
 - Install the Docker Desktop from the link https://www.docker.com/products/docker-desktop/
+- If required, U can add Path environment variable for executing Docker commands from the cmd. 
+- Docker starts immediately after installation, however U can change the settings to start on request instead of Auto start.
+- If the Cmd is already opened, U may have to restart it to execute the docker commands. 
+
+## Using MongoDb from the Docker
+1. Run the following commands in the order
+```
+docker pull mongodb/mongodb-community-server
+docker run --name mongo -d mongodb/mongodb-community-server:latest
+docker container ls
+docker exec -it mongo mongosh
+show dbs
+```
 
 
