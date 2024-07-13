@@ -70,6 +70,7 @@
 ```
 wsl --install
 ``` 
-- U must restart the machine, then U can download the MSI file of the Docker from 
+- U must restart the machine, then U can download the MSI file of the Docker from the Docker Website.
+- Install the Docker Desktop from the link https://www.docker.com/products/docker-desktop/
 
 
