@@ -129,8 +129,14 @@ docker run java-app
 2. Download the Jenkins from the website and install it. https://get.jenkins.io/windows-stable/2.452.3/jenkins.msi
 3, During the installation, it shall ask the JRE location which U must select. 
 4. U can optionally change the port no of the server to suit UR machine requirements. 
-5. U can start the app by hitting http:\\localhost:portNo and login the App using default secret password shared at a predefined location:
+5. U can start the app by hitting http://localhost:5000 and login the App using default secret password shared at a predefined location: 
+
+## Creating Jobs in Jenkins:
+1. U develop the required application in the local directory. 
+2. Click on new Item and select New FreeStyle project. 
+3. Provide the description and choose the location of the Project directory in the Advanced section and select Custom Repository. 
+4. In the Build Steps, select Windows Batch command and provide the commands to run the java Application. 
 ```
-C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword
+javac ./SampleFile.java
+java SampleFile
 ```
-6. U can reset the password and the user name as required to you
