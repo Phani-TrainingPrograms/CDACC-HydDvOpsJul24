@@ -1,5 +1,5 @@
 # DevOps Training for CDAC-Hyd Batch July 24
-
+mailto:phani.blrtraining@gmail.com
 ## What is DevOps?
 - DevOps is a mix of 2 words: Development and Operations. 
 - There will be usually 2 teams who collaborate in the Product development Cycle(PDC). Developer Team and Operations Team. 
