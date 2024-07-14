@@ -111,3 +111,22 @@ docker run java-app
     - -i => Use this option if U want the app run in interactive mode, when U expect User inputs from the Console Window. 
 
 
+## Jenkins
+### What is Continuous integration?
+- It is an automatic process with a chain of activities that should be peformed when a code is pushed into a REPO and rest of the operations are taken up automatically that helps in pipelining the app build, testing and deploying along with some operational sequences that are done without an exclusive resource to monitor it. 
+-<b>Linting:</b> U may sometimes have to validate the code that U have developed. This is called as LINTING. Solarlint is one of the popular linting tools. Linting is the automated checking of your source code for programmatic and stylistic errors. It is done using a Linting tool like Solarlint. 
+- The CIT(Continuous Integration Tool) will be responsible to keep track on any cde changes that are pushed into the repo. It has a feature of triggering a series of tasks and finally do a post build task before terminating the process. 
+- After the operations are completed in feel good mode, the post build operation will finally deploy the app on any container like Docker or a cloud server to be finally consumed by the End customers. here the QAT team of the Customer end will start testing the application and give the appropriate feedback. 
+- It performs in a sequence where even of one of the teasks are failed, the rest f the operations will be stopped and the email notifications will be triggered to all the stake holders of the project to bring their attention and resolve it asap. 
+
+### Jenkins?
+- It is basically a Server side Application(developed uing JSP and Java) that runs on Apache tomcat server. It can be executed on multiple platforms. It is one of the most popular CIT available in the computing world. 
+- Jenkins uses the concept of pipelines or group of tasks which work like a chain of operations. It has a continous process that monitors the environment at all time. 
+- It uses a lot of 3rd party tools like Git, Sonarlint, ESlint, JUnit, NUnit and many more software performance monitoring tools that are invoked during the building cycle and ensure that the app is built with all the coding points in consideration. 
+
+### Installation of Jenkins:
+1. Download the appropriate JDK(v8.0 or later). 
+2. Download the Jenkins from the website and install it. https://get.jenkins.io/windows-stable/2.452.3/jenkins.msi
+3, During the installation, it shall ask the JRE location which U must select. 
+4. U can optionally change the port no of the server to suit UR machine requirements. 
+5. U can start the app by hitting http:\\localhost:portNo and login the App using default secret password shared at a predefined location: 
