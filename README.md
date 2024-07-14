@@ -110,7 +110,6 @@ docker run java-app
     - -t => to run the app in a virtual terminal so that U can see the results. 
     - -i => Use this option if U want the app run in interactive mode, when U expect User inputs from the Console Window. 
 
-
 ## Jenkins
 ### What is Continuous integration?
 - It is an automatic process with a chain of activities that should be peformed when a code is pushed into a REPO and rest of the operations are taken up automatically that helps in pipelining the app build, testing and deploying along with some operational sequences that are done without an exclusive resource to monitor it. 
@@ -142,3 +141,54 @@ java SampleFile
 ```
 5. U can use build triggers section to define the predefined time on when the periodic build is expected. Assume that U should build the application at a certain time of the day. Or it could be for every 10 Mins.
 - H(0-29)/10 * * * *  ==> For every 10 mins from the saving.
+
+## Microservices:
+1. They are small scale apps that are created while breaking down large app into smaller modular units which are designed to work independently of one another.
+2. With the new development methodologies, where the final product is never understood and only small updations of app happen over short intervals of time, microservices are the way to go.
+3. UR Service is hosted insider the serverless environment registered under a service broker who publishes your services and allows customer to discover the services based on their search engines and the service providers they are having business with.
+4. Microservices can be developed under various technologies like Java-Springboot, .NET CORE and .NET WEB API and other open source projects like NODEJS-EXPRESS , NESTJS and many more.
+5. Our example will be on .NET CORE to develop an ASP.NET CORE WEB API Project that will connect a SQL server database. We will have 2 Docker containers that will have our App in one Docker image and the SQL server in another docker image. They both will be integrated using a language called YAML. We use Docker Compose tool to orchestrate the interaction between the .NET CORE and SQL server database.
+6. U can try creating a REACT App that consumes this REST API. U will additional middleware like CORS and other DI tools.
+
+### How to create Microservices:
+1. VS 2022 should be selected. Create a ASP.NET CORE Web API project
+2. Better go for CODE FIRST Approach to create the data classes. Include the requried EF Tools
+3. Implement the DBContext and provide the required DI feature into Program.cs
+4. If connecting to SQL server, we will create an YAML file for downloading image of SQL server in the Docker compose.
+5. Expose the service to be called by any Application.
+
+### Creating a Web API microservice:
+# Implementation of the service:
+1. Create a new ASP.NET Core Web API project WebApiSqlServerDockerDemo in Visual Studio 2022 using .NET 7.0 and make sure you enable the Docker support while you are creating the project.
+![image](https://github.com/Phani-TrainingPrograms/DevOps-BlrDec24/assets/131134278/0bd67527-1398-4178-984a-5fc67e3def41)
+2. Open the NuGet package manager and search and install the following packages in your project.
+   - Microsoft.EntityFrameworkCore.SqlServer
+   - Microsoft.EntityFrameworkCore.Design
+   - Microsoft.EntityFrameworkCore.Tools
+3. Create a Models folder in the project root folder and create the following Product entity in that folder with the code shared.
+4. create a folder called Data in our project and create a new class called OnlineShopDbContext in this folder with the code shared.
+5. Define our database connection string and we can save the connection string in the appsettings.json file.
+6. Register the SQL Server database provider in Program.cs file using the UseSqlServer method. The UseSqlServer method requires a database connection string and we can read and pass this information using the GetConnectionString method.
+7. Implement the controller class.
+8. Add Docker compose support in Visual Studio, right-click on the Web API project in the solution explorer and choose and choose Add > Container Orchestrator Support… option from the menu.![image](https://github.com/Phani-TrainingPrograms/DevOps-BlrDec24/assets/131134278/cf89e192-a80f-43ae-a236-a94a7654eff8)
+9. Follow the steps to choose Docker Compose and Linux machine
+10. Build the Application with the Docker Compose as Start up to allow the containers created in the Docker
+11. Run the Application.
+12. U can configure the Sql Server from the SSMS 
+## Kubernetes:
+- It is a container management tool developed by Google. its main purpose is helping in managing the containerized apps on various platforms of cloud. It can also reside in Virtual servers and local servers. It is said to be one of the most popular containerization management tools. 
+- It is purely cloud based and comes with host of communication and automation tools that are used to maintain and manage large scale containers as one unit. 
+- K8s maintains clusters for managing the services. These services are grouped into nodes and pods. A service can have one or more nodes and each node can have one or more PODs. Each POD represents an independent container of microservices. 
+- K8s maintains these services using multiple clustors. When an App is required to be loaded, it will be loaded into Primary Clustor. When, on for some reasons, the primary clustors fail to load, it immediately invokes a secondary clustor(backup) and the repo of the secondary clustor will be provided and the app will not break down. 
+
+### How K8s work?
+- Its a linux based Environment that shares lots of resources required to manage complex Apps. It is primarily used for distributed computing apps where the K8s abstract the underlying infrastructure and hardware resources and offers std and consistant UI that a DevOps Engineer can monitor from a common place. 
+- The UI tool looks simple yet allowing to perform complex operations. 
+- It works similar to Jenkins where one can monitor multiple apps, clustors and allocate the resources required for each of the application. 
+- The DevOps person can determine the amount of resources that each app needs and allocate them by either scalling up or scalling down the resources for the app to run smooothly.
+
+### Issues with K8s:
+1. It needs a heavy infrastructure to showcase any application
+2. The complete pipeline is done by a team of testers, Devops Engineers and QAT members.
+3. It is a collaborative work to make UR services hosted in K8s Server. It is not user friendly like Jenkins. 
+4. But there are many 3rd party UI tools that can manage this infrastructure. 
