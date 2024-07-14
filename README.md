@@ -140,3 +140,5 @@ docker run java-app
 javac ./SampleFile.java
 java SampleFile
 ```
+5. U can use build triggers section to define the predefined time on when the periodic build is expected. Assume that U should build the application at a certain time of the day. Or it could be for every 10 Mins.
+- H(0-29)/10 * * * *  ==> For every 10 mins from the saving.
