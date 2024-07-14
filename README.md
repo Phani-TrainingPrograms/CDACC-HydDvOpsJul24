@@ -129,4 +129,8 @@ docker run java-app
 2. Download the Jenkins from the website and install it. https://get.jenkins.io/windows-stable/2.452.3/jenkins.msi
 3, During the installation, it shall ask the JRE location which U must select. 
 4. U can optionally change the port no of the server to suit UR machine requirements. 
-5. U can start the app by hitting http:\\localhost:portNo and login the App using default secret password shared at a predefined location: 
+5. U can start the app by hitting http:\\localhost:portNo and login the App using default secret password shared at a predefined location:
+```
+C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword
+```
+6. U can reset the password and the user name as required to you
